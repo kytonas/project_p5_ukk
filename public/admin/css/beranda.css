@@ -1,0 +1,42 @@
+
+.container {
+    padding-top: 2rem;
+}
+#row {
+    box-shadow: 0 0 5px gray; 
+    width: 1150px; 
+    height: 150px;
+    background-color: white; 
+    border-radius: 10px; 
+}
+p {
+    color: black;
+}
+#bg {
+    background-image: url(../img/gray-calathea-lutea-leaf-patterned-background_53876-149681.jpg);
+}
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+.link {
+    color: white;
+}
+.link:hover {
+    transition: 0.5s;
+    color: black;
+}
+.program {
+    color: rgb(82, 82, 95);
+}
+#row:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+    transition-duration: 0.5s;
+}
+#navbar:hover {
+    color: violet;
+    transition: 0.2s;
+}
+ 
