@@ -8,6 +8,7 @@ use App\Http\Controllers\StrukturalController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\EskulController;
+use App\Http\Controllers\BerandaController;
 
 
 
@@ -25,9 +26,8 @@ use App\Http\Controllers\EskulController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('beranda');
+Route::get('/', [BerandaController::class, 'index'])->name('beranda');
+Route::get('/artikel/{id}', [BerandaController::class, 'show']) ->name('beranda.show');
 
 Auth::routes();
 

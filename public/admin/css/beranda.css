@@ -12,8 +12,59 @@
 p {
     color: black;
 }
-#bg {
-    background-image: url(../img/gray-calathea-lutea-leaf-patterned-background_53876-149681.jpg);
+#bg1 {
+    background-image: url(../img/literasi.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#text1 {
+    background-color: gray;
+    margin-left: 60px;
+    width: 45%;
+    font-size: large;
+    height: 600px;
+
+}
+#bg2 {
+    background-color: #fdfccf;
+
+
+}
+
+#text2 {
+    background-color: #222329;
+    width: 45%;
+    margin-left: 5px;
+    height: 350px;
+    margin-top: 100px;
+
+
+}
+.work {
+    margin-left: 45px;
+    width: 85%;
+}
+.think {
+    margin-left: 45px;
+    margin-top: 45px;
+
+}
+
+#crew {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 85%;
+    margin-left: 60px;
+}
+.kami {
+    margin-left: 70px;
+    margin-top: 45px;
+}
+
+.p {
+    margin-left: 70px;
+    width: 70%;
+    color: white;
 }
 nav ul li {
     list-style-type: none;

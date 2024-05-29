@@ -20,11 +20,73 @@
     <br>
     <br>
     <!-- Awal Jumbotron -->
-    
+    <div id="bg1">
+        <div class="row text-white mt-5">
+            <div class="col">
+        <div id="text1">
+            <br>
+            <h1 class="kami">Tentang Kami</h1>
+            <br>
+            <p class="p">SMK Assalaam merupakan sekolah kejuruan dengan kompetensi keahlian teknik kendaraan ringan (roda empat) plus sepeda motor dalam 
+              proses pendidikan pelatihan. 
+              Peka terhadap perubahan perkembangan teknologi baru dan tuntutan kebutuhan pasar kerja, agar lulusannya siap menghadapi perubahan.
+            </p>
+            <p class="p">SMK Assalaam dengan penuh kesadaran berani melakukan perubahan dengan berbagai 
+              inovasi dan improvisasi, 
+              mencari terobosan untuk meraih keberhasilan bagi peserta didiknya.
+            </p>
+            <p class="p">Tekad tersebut sebagai wujud nyata dari SMK Assalaam didukung oleh sarana praktek yang lengkap UP TO DATE, 
+              waktu praktek memadai dan praktek berstandar industri dengan pelayanan prima.
+            </p>
+        </div>
+    </div>
+    </div>
+    </div>
   <!-- Akhir Jumbotron -->
     
    <!-- Awal Home -->
-   
+   <div class="section">
+        <div class="container">
+            {{-- ROW 1 --}}
+            <div class="row mt-5 justify-content-center">
+                <h2>Artikel</h2>
+            </div>
+            {{-- /ROW 1 --}}
+            {{-- ROW 2 --}}
+            <div class="row">
+                @foreach ($artikel as $data)
+                    <div class="col-4 mt-5">
+                        <div class="card bg-secondary text-light" style="width: 18rem;" >
+                            <img src="{{ asset('images/artikel/' .$data->sampul) }}"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $data -> judul }}</h5>
+                                {{-- <p class="card-text">Jumlah : {{ $data->jumlah }}</p>
+                                <p class="card-text">Tanggal Produk : {{ $data->tanggal_produksi }}</p>
+                                <p class="card-text">Merek : {{ $data -> merek -> nama_merek }}</p> --}}
+                                <a href="{{ route('beranda.show', ( $data -> id)) }}" class="btn btn-primary">Lihat Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                {{-- /ROW 2 --}}
+            </div>
+        </div>
+    <br>
+    <div id="bg2">
+    <div class="container mt-5">
+        <div class="row text-white">
+          <div id="text2">
+            <p class="think"><h2>Sekolah berkualitas dengan program pembelajaran yang berkualitas,
+               sumber daya pengajar yang berkualitas, dan sarana prasarana yang lengkap dan mutakhir
+              </h2></p>
+          </div>
+          <div class="col">
+            <img src="{{asset('admin/img/orangbelajar.png.png')}}" class="text-center" id="crew" alt="">
+          </div>
+        </div>
+    </div>
+      </div>
    <!-- Akhir Home -->
 
 <!-- awal footer -->
