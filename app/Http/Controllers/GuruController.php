@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
- 
-use Illuminate\Http\Request;
+
 use App\Models\Guru;
 use App\Models\Mapel;
-
+use Illuminate\Http\Request;
 
 class GuruController extends Controller
 {
@@ -30,7 +29,7 @@ class GuruController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         $mapel = Mapel::all();
         return view('guru.create', compact('mapel'));
     }
@@ -48,6 +47,15 @@ class GuruController extends Controller
         $guru->telepon = $request->telepon;
         $guru->email = $request->email;
         $guru->id_mapel = $request->id_mapel;
+        //upload image
+        if ($request->hasFile('sampul')) {
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/guru', $name);
+            $guru->sampul = $name;
+
+        }
+
         $guru->save();
         return redirect()->route('guru.index')->with('success', 'Data Berhasil Ditambah');
     }
@@ -91,6 +99,16 @@ class GuruController extends Controller
         $guru->telepon = $request->telepon;
         $guru->email = $request->email;
         $guru->id_mapel = $request->id_mapel;
+        //upload image
+        if ($request->hasFile('sampul')) {
+            $guru->deleteImage();
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/guru', $name);
+            $guru->sampul = $name;
+
+        }
+
         $guru->save();
         return redirect()->route('guru.index')->with('success', 'Data Berhasil Diubah');
     }

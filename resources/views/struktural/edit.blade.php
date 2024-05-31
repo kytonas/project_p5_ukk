@@ -63,7 +63,8 @@
                                  <div class="col-md-8">
                                      <div class="card">
                                          <div class="card-body">
-                                             <form action="{{ route('struktural.update', $struktural->id) }}" method="POST">
+                                             <form action="{{ route('struktural.update', $struktural->id) }}" method="POST"
+                                                    enctype="multipart/form-data">
                                                  @csrf
                                                  @method('PUT')
                                                  <div class="mb-3">
@@ -83,9 +84,13 @@
                                                                  {{ $data->nama_jabatan }}</option>
                                                          @endforeach
                                                      </select>
+                                                     <label class="form-label">Sampul</label><br>
+                                                     <img src="{{ asset('/images/struktural/' . $struktural->sampul) }}"
+                                                         width="100">
+                                                     <input type="file" class="form-control" name="sampul">
                                                  </div><br>
                                                  <button type="submit" class="btn btn-primary">Ubah</button>
-                                                 <a href="{{ url('struktural') }}" class="btn btn-danger">Kembali</a>
+                                                 <a href="{{ url('admin/struktural') }}" class="btn btn-danger">Kembali</a>
                                              </form>
                                          </div>
                                      </div>

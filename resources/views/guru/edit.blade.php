@@ -63,7 +63,8 @@
                                  <div class="col-md-8">
                                      <div class="card">
                                          <div class="card-body">
-                                             <form action="{{ route('guru.update', $guru->id) }}" method="POST">
+                                             <form action="{{ route('guru.update', $guru->id) }}" method="POST"
+                                                    enctype="multipart/form-data">
                                                  @csrf
                                                  @method('PUT')
                                                  <div class="mb-3">
@@ -84,15 +85,19 @@
                                                                  {{ $data->nama_mapel }}</option>
                                                          @endforeach
                                                      </select>
+                                                     <label class="form-label">Sampul</label><br>
+                                                     <img src="{{ asset('/images/guru/' . $guru->sampul) }}"
+                                                         width="100">
+                                                     <input type="file" class="form-control" name="sampul">
                                                  </div><br>
                                                  <button type="submit" class="btn btn-primary">Ubah</button>
-                                                 <a href="{{ url('guru') }}" class="btn btn-danger">Kembali</a>
+                                                 <a href="{{ url('admin/guru') }}" class="btn btn-danger">Kembali</a>
                                              </form>
                                          </div>
                                      </div>
                                  </div>
                              </div>
-                         </div>
+                         </div> 
                      </div>
                  </div>
              </div>

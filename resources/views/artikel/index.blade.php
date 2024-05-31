@@ -75,12 +75,12 @@
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">No.</th>
-                                                        <th scope="col">Judul</th>
+                                                         <th scope="col">Judul</th>
                                                         <th scope="col">Isi</th>
                                                         <th scope="col">Sampul</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
-                                                </thead>
+                                                 </thead>
                                                 <tbody>
                                                     @php
                                                         $no = 1;
@@ -93,7 +93,7 @@
                                                             <td>
                                                                 <img src="{{ asset('/images/artikel/' . $data->sampul) }}"
                                                                     width="100">
-                                                            </td>
+                                                             </td>
                                                             <form action="{{ route('artikel.destroy', $data->id) }}"
                                                                 method="POST">
                                                                 @csrf

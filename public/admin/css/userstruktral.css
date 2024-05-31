@@ -1,0 +1,64 @@
+#back {
+    background-image: url(../img/sakola.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+}
+.guru-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#row {
+    box-shadow: 0 0 5px gray;
+    width: 1150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#navbar:hover {
+    color: violet;
+    transition: 0.2s; 
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+
+#row {
+    box-shadow: 0 0 5px gray;
+    width: 1150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+h4 {
+    color: rgb(87, 146, 229);
+}
+#text1 {
+    background-color: gray;
+    margin-left: 60px;
+    width: 45%;
+    font-size: large;
+    height: 1000px;
+
+}
+.kami {
+    margin-left: 70px;
+    margin-top: 45px;
+}
+
+.p {
+    margin-left: 70px;
+    width: 70%;
+    color: white;
+}

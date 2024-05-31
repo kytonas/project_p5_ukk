@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('kaprog');
             $table->string('nama_jurusan');
-            $table->timestamps();
+            $table->string('sampul');
+
+            $table->timestamps(); 
         });
     }
 

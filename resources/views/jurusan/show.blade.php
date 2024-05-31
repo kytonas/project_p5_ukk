@@ -72,12 +72,15 @@
                                                     <label class="form-label">Nama Jurusan</label>
                                                     <input type="text" class="form-control" name="nama_jurusan"
                                                             value="{{$jurusan->nama_jurusan}}" disabled>
+                                                    <label class="form-label">Sampul</label><br>
+                                                     <img src="{{ asset('/images/jurusan/' . $jurusan->sampul) }}"
+                                                         width="100">
                                                 </div><br>
-                                                <a href="{{ url('jurusan') }}" class="btn btn-danger">Kembali</a>
+                                                <a href="{{ url('admin/jurusan') }}" class="btn btn-danger">Kembali</a>
                                             </form>
                                         </div>
                                     </div>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </div>

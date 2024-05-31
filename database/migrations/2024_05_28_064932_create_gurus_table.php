@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('nama_guru');
             $table->string('telepon');
-            $table->string('email');
+            $table->string('email'); 
             $table->unsignedBigInteger('id_mapel');
+            $table->string('sampul');
 
             $table->foreign('id_mapel')->references('id')->on('mapels')->onDelete('cascade');
 

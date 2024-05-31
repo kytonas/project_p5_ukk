@@ -69,15 +69,15 @@
                                                  <div class="mb-3">
                                                      <label class="form-label">Judul</label>
                                                      <input type="text" class="form-control" name="judul">
-                                                     <div class="form-floating">
+                                                      <div class="form-floating">
                                                         <label for="floatingTextarea">Isi</label>
-                                                         <textarea class="form-control" name="isi" id="floatingTextarea"></textarea>          
+                                                          <textarea class="form-control" name="isi" id="floatingTextarea"></textarea>          
                                                      </div>
                                                      <label class="form-label">Sampul</label>
                                                      <input type="file" class="form-control" name="sampul">
                                                  </div><br>
                                                  <button type="submit" class="btn btn-primary">Simpan</button>
-                                                 <a href="{{ url('artikel') }}" class="btn btn-danger">Kembali</a>
+                                                 <a href="{{ url('admin/artikel') }}" class="btn btn-danger">Kembali</a>
                                              </form>
                                          </div>
                                      </div>

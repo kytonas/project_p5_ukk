@@ -69,12 +69,15 @@
                                                      <label class="form-label">ID Guru</label>
                                                      <input type="text" class="form-control" name="id_guru" value="{{ $struktural -> id_guru }}" disabled>
                                                      <label class="form-label">ID Jabatan</label>
-                                                     <input type="text" class="form-control" name="id_jabatan" value="{{ $struktural -> id_jabatan }}" disabled> 
+                                                     <input type="text" class="form-control" name="id_jabatan" value="{{ $struktural -> id_jabatan }}" disabled>
+                                                     <label class="form-label">Sampul</label><br>
+                                                     <img src="{{ asset('/images/struktural/' . $struktural->sampul) }}"
+                                                         width="100"> 
                                                  </div><br>
-                                                 <a href="{{ url('struktural') }}" class="btn btn-danger">Kembali</a>
+                                                 <a href="{{ url('/admin/struktural') }}" class="btn btn-danger">Kembali</a>
                                              </form>
                                          </div>
-                                     </div>
+                                     </div> 
                                  </div>
                              </div>
                          </div>

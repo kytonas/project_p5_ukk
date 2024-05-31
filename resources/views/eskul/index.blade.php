@@ -69,6 +69,7 @@
                                         @endif
 
                                         <div class="card-body">
+                                            
                                             <a href="{{ route('eskul.create') }}" class="btn btn-primary">Tambah
                                                 data</a>
                                             <table class="table">
@@ -77,6 +78,7 @@
                                                         <th scope="col">No.</th>
                                                         <th scope="col">Nama Eskul</th>
                                                         <th scope="col">Deskripsi</th>
+                                                        <th scope="col">Sampul</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
                                                 </thead>
@@ -89,6 +91,10 @@
                                                             <th scope="row">{{ $no++ }}</th>
                                                             <td>{{ $data->nama_eskul }}</td>
                                                             <td>{{ $data->isi }}</td>
+                                                            <td>
+                                                                <img src="{{ asset('/images/eskul/' . $data->sampul) }}"
+                                                                    width="100">
+                                                            </td>
                                                             <form action="{{ route('eskul.destroy', $data->id) }}"
                                                                 method="POST">
                                                                 @csrf

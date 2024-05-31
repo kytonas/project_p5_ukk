@@ -66,8 +66,8 @@
                                              <form action="{{ route('artikel.store') }}" method="POST">
                                                  @csrf
                                                  <div class="mb-3">
-                                                     <label class="form-label">Judul</label>
-                                                     <input type="text" class="form-control" name="id_guru"
+                                                     <label class="form-label">Judul</label> 
+                                                     <input type="text" class="form-control" name="id_guru" 
                                                          value="{{ $artikel->judul }}" disabled>
                                                      <div class="form-floating">
                                                          <label for="floatingTextarea2">Isi</label>
@@ -77,7 +77,7 @@
                                                      <img src="{{ asset('/images/artikel/' . $artikel->sampul) }}"
                                                          width="100">
                                                  </div><br>
-                                                 <a href="{{ url('artikel') }}" class="btn btn-danger">Kembali</a>
+                                                 <a href="{{ url('admin/artikel') }}" class="btn btn-danger">Kembali</a>
                                              </form>
                                          </div>
                                      </div>

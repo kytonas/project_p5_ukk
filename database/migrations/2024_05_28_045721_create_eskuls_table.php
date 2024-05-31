@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_eskul');
             $table->string('isi');
+            $table->string('sampul');
             $table->timestamps();
         });
     }

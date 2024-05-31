@@ -74,8 +74,11 @@
                                                      <input type="text" class="form-control" name="email" value="{{ $guru -> email }}" disabled>
                                                      <label class="form-label">ID Mapel</label>
                                                      <input type="text" class="form-control" name="id_mapel" value="{{ $guru -> id_mapel }}" disabled>
+                                                     <label class="form-label">Sampul</label><br>
+                                                     <img src="{{ asset('/images/guru/' . $guru->sampul) }}"
+                                                         width="100">
                                                  </div><br>
-                                                 <a href="{{ url('guru') }}" class="btn btn-danger">Kembali</a>
+                                                 <a href="{{ url('admin/guru') }}" class="btn btn-danger">Kembali</a>
                                              </form>
                                          </div>
                                      </div>

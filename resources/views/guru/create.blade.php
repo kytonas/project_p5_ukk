@@ -63,7 +63,8 @@
                                  <div class="col-md-8">
                                      <div class="card">
                                          <div class="card-body">
-                                             <form action="{{ route('guru.store') }}" method="POST">
+                                             <form action="{{ route('guru.store') }}" method="POST"
+                                                    enctype="multipart/form-data">
                                                  @csrf
                                                  <div class="mb-3">
                                                      <label class="form-label">Nama guru</label>
@@ -80,9 +81,11 @@
                                                                  {{ $data->nama_mapel }}</option>
                                                          @endforeach
                                                      </select>
+                                                     <label class="form-label">Sampul</label>
+                                                     <input type="file" class="form-control" name="sampul">
                                                  </div><br>
                                                  <button type="submit" class="btn btn-primary">Simpan</button>
-                                                 <a href="{{ url('guru') }}" class="btn btn-danger">Kembali</a>
+                                                 <a href="{{ url('admin/guru') }}" class="btn btn-danger">Kembali</a>
                                              </form>
                                          </div>
                                      </div>

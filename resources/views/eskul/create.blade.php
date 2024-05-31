@@ -63,16 +63,21 @@
                                 <div class="col-md-8">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="{{ route('eskul.store') }}" method="POST">
+                                            <form action="{{ route('eskul.store') }}" method="POST"
+                                                enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="mb-3">
                                                     <label class="form-label">Nama Eskul</label>
                                                     <input type="text" class="form-control" name="nama_eskul">
-                                                    <label class="form-label">Deskripsi</label>
-                                                    <input type="text" class="form-control" name="isi">
+                                                    <div class="form-floating">
+                                                        <label for="floatingTextarea">Deskripsi</label>
+                                                          <textarea class="form-control" name="isi" id="floatingTextarea"></textarea>          
+                                                     </div>
+                                                     <label class="form-label">Sampul</label>
+                                                     <input type="file" class="form-control" name="sampul">
                                                 </div><br>
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                                                <a href="{{ url('eskul') }}" class="btn btn-danger">Kembali</a>
+                                                <a href="{{ url('admin/eskul') }}" class="btn btn-danger">Kembali</a>
                                             </form>
                                         </div>
                                     </div>

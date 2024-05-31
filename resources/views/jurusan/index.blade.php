@@ -77,6 +77,7 @@
                                                         <th scope="col">No.</th>
                                                         <th scope="col">Kaprog</th>
                                                         <th scope="col">Nama Jurusan</th>
+                                                        <th scope="col">Sampul</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
                                                 </thead>
@@ -89,10 +90,14 @@
                                                             <th scope="row">{{ $no++ }}</th>
                                                             <td>{{ $data->kaprog }}</td>
                                                             <td>{{ $data->nama_jurusan }}</td>
+                                                            <td>
+                                                                <img src="{{ asset('/images/jurusan/' . $data->sampul) }}"
+                                                                    width="100">
+                                                             </td>
                                                             <form action="{{ route('jurusan.destroy', $data->id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                @method('DELETE')
+                                                                @method('DELETE') 
                                                                 <td>
                                                                     <a href="{{ route('jurusan.edit', $data->id) }}"
                                                                         class="btn btn-success">Edit</a>

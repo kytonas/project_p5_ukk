@@ -79,6 +79,7 @@
                                                         <th scope="col">Telepon</th>
                                                         <th scope="col">E-mail</th>
                                                         <th scope="col">Guru Mapel</th>
+                                                        <th scope="col">Sampul</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
                                                 </thead>
@@ -93,9 +94,13 @@
                                                             <td>{{ $data->telepon }}</td>
                                                             <td>{{ $data->email }}</td>
                                                             <td>{{ $data-> mapel -> nama_mapel }}</td>
+                                                            <td>
+                                                                <img src="{{ asset('/images/guru/' . $data->sampul) }}"
+                                                                    width="100">
+                                                             </td>
                                                             <form action="{{ route('guru.destroy', $data->id) }}"
                                                                 method="POST">
-                                                                @csrf
+                                                                @csrf 
                                                                 @method('DELETE')
                                                                 <td>
                                                                     <a href="{{ route('guru.edit', $data->id) }}"

@@ -11,7 +11,7 @@ class ArtikelController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function __construct()
     {
         $this->middleware('auth');
@@ -100,7 +100,7 @@ class ArtikelController extends Controller
             $img->move('images/artikel', $name);
             $artikel->sampul = $name;
 
-        }
+        } 
         $artikel -> save();
         return redirect()->route('artikel.index')->with('success', 'Data Berhasil Diubah!');
     }

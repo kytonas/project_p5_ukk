@@ -68,11 +68,11 @@
                                                  @method('PUT')
                                                  <div class="mb-3">
                                                      <label class="form-label">Judul</label>
-                                                     <input type="text" class="form-control" name="judul"
+                                                      <input type="text" class="form-control" name="judul"
                                                          value="{{ $artikel->judul }}">
                                                      <div class="form-floating">
                                                         <label for="floatingTextarea">Isi</label>
-                                                         <textarea class="form-control" name="isi" id="floatingTextarea">{{ $artikel->isi }}</textarea>          
+                                                          <textarea class="form-control" name="isi" id="floatingTextarea">{{ $artikel->isi }}</textarea>          
                                                      </div>
                                                      <label class="form-label">Sampul</label><br>
                                                      <img src="{{ asset('/images/artikel/' . $artikel->sampul) }}"
@@ -80,7 +80,7 @@
                                                      <input type="file" class="form-control" name="artikel">
                                                  </div><br>
                                                  <button type="submit" class="btn btn-primary">Ubah</button>
-                                                 <a href="{{ url('artikel') }}" class="btn btn-danger">Kembali</a>
+                                                 <a href="{{ url('admin/artikel') }}" class="btn btn-danger">Kembali</a>
                                              </form>
                                          </div>
                                      </div>

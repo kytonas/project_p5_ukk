@@ -18,3 +18,4 @@ class Artikel extends Model
         }
     }
 }
+  

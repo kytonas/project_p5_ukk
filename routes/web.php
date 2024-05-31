@@ -9,7 +9,10 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\EskulController;
 use App\Http\Controllers\BerandaController;
-
+use App\Http\Controllers\UserguruController;
+use App\Http\Controllers\UserstrukturalController;
+use App\Http\Controllers\UsereskulController;
+use App\Http\Controllers\UserjurusanController;
 
 
 
@@ -25,9 +28,21 @@ use App\Http\Controllers\BerandaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Beranda
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 Route::get('/artikel/{id}', [BerandaController::class, 'show']) ->name('beranda.show');
+
+// Guru
+Route::get('/guru', [UserguruController::class, 'index'])->name('guru');
+
+// Struktural
+Route::get('/struktural', [UserstrukturalController::class, 'index'])->name('struktural');
+
+// Eskul
+Route::get('/eskul', [UsereskulController::class, 'index'])->name('eskul');
+
+// Jurusan
+Route::get('/jurusan', [UserjurusanController::class, 'index'])->name('jurusan');
 
 Auth::routes();
 

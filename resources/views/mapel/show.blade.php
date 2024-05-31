@@ -69,7 +69,7 @@
                                                     <label class="form-label">Nama mapel</label>
                                                     <input type="text" class="form-control" name="nama_mapel" value="{{ $mapel -> nama_mapel }}" disabled>
                                                 </div><br>
-                                                <a href="{{ url('mapel') }}" class="btn btn-danger">Kembali</a>
+                                                <a href="{{ url('admin/mapel') }}" class="btn btn-danger">Kembali</a>
                                             </form>
                                         </div>
                                     </div>

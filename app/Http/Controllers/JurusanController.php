@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Jurusan;
+use Illuminate\Http\Request;
 
 class JurusanController extends Controller
 {
@@ -43,6 +43,13 @@ class JurusanController extends Controller
         $jurusan = new Jurusan;
         $jurusan->kaprog = $request->kaprog;
         $jurusan->nama_jurusan = $request->nama_jurusan;
+        if ($request->hasFile('sampul')) {
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/jurusan', $name);
+            $jurusan->sampul = $name;
+
+        }
 
         $jurusan->save();
         return redirect()->route('jurusan.index')->with('success', 'Data berhasil ditambah');
@@ -68,7 +75,7 @@ class JurusanController extends Controller
      */
     public function edit($id)
     {
-        $jurusan = Jurusan::findOrFail($id);             
+        $jurusan = Jurusan::findOrFail($id);
         return view('jurusan.edit', compact('jurusan'));
     }
 
@@ -84,6 +91,15 @@ class JurusanController extends Controller
         $jurusan = Jurusan::findOrFail($id);
         $jurusan->kaprog = $request->kaprog;
         $jurusan->nama_jurusan = $request->nama_jurusan;
+        if ($request->hasFile('sampul')) {
+            $jurusan->deleteImage();
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/jurusan', $name);
+            $jurusan->sampul = $name;
+
+        }
+
         $jurusan->save();
         return redirect()->route('jurusan.index')->with('success', 'Data berhasil diubah');
     }
@@ -97,7 +113,7 @@ class JurusanController extends Controller
     public function destroy($id)
     {
         $jurusan = Jurusan::findOrFail($id);
-        $jurusan -> delete();
+        $jurusan->delete();
         return redirect()->route('jurusan.index');
     }
 }

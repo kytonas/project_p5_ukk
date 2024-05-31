@@ -8,8 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Struktural extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'id_guru', 'id_jabatan'];
+    protected $fillable = ['id', 'id_guru', 'id_jabatan', 'sampul'];
     public $timestamp = true;
+
+    public function deleteImage(){
+        if($this->cover && file_exists(public_path('images/struktural' . $this->sampul))){
+            return unlink(public_path('images/struktural' . $this->sampul));
+        }
+    }
 
     public function guru()
     {
@@ -20,4 +26,4 @@ class Struktural extends Model
     {
         return $this->BelongsTo(Jabatan::class, 'id_jabatan');
     }
-}
+} 

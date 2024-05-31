@@ -63,7 +63,8 @@
                                 <div class="col-md-8">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="{{ route('jurusan.update', $jurusan->id) }}" method="POST">
+                                            <form action="{{ route('jurusan.update', $jurusan->id) }}" method="POST"
+                                                    enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="mb-3">
@@ -72,13 +73,17 @@
                                                         value="{{ $jurusan->kaprog }}">
                                                     <label class="form-label">Nama Jurusan</label>
                                                     <input type="text" class="form-control" name="nama_jurusan"
-                                                        value="{{ $jurusan->nama_jurusan }}">    
+                                                        value="{{ $jurusan->nama_jurusan }}">   
+                                                    <label class="form-label">Sampul</label><br>
+                                                     <img src="{{ asset('/images/jurusan/' . $jurusan->sampul) }}"
+                                                         width="100">
+                                                     <input type="file" class="form-control" name="sampul"> 
                                                 </div><br>
                                                 <button type="submit" class="btn btn-primary">Ubah</button>
-                                                <a href="{{ url('jurusan') }}" class="btn btn-danger">Kembali</a>
+                                                <a href="{{ url('admin/jurusan') }}" class="btn btn-danger">Kembali</a>
                                             </form>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
                         </div>

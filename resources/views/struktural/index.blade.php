@@ -77,6 +77,7 @@
                                                         <th scope="col">No.</th>
                                                         <th scope="col">Nama Guru</th>
                                                         <th scope="col">Jabatan</th>
+                                                        <th scope="col">Sampul</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
                                                 </thead>
@@ -89,10 +90,14 @@
                                                             <th scope="row">{{ $no++ }}</th>
                                                             <td>{{ $data-> guru -> nama_guru }}</td>
                                                             <td>{{ $data-> jabatan -> nama_jabatan }}</td>
+                                                            <td>
+                                                                <img src="{{ asset('/images/struktural/' . $data->sampul) }}"
+                                                                    width="100">
+                                                             </td>
                                                             <form action="{{ route('struktural.destroy', $data->id) }}"
                                                                 method="POST">
                                                                 @csrf
-                                                                @method('DELETE')
+                                                                @method('DELETE') 
                                                                 <td>
                                                                     <a href="{{ route('struktural.edit', $data->id) }}"
                                                                         class="btn btn-success">Edit</a>

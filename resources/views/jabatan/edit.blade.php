@@ -72,7 +72,7 @@
                                                         value="{{ $jabatan->nama_jabatan }}">
                                                 </div><br>
                                                 <button type="submit" class="btn btn-primary">Ubah</button>
-                                                <a href="{{ url('jabatan') }}" class="btn btn-danger">Kembali</a>
+                                                <a href="{{ url('admin/jabatan') }}" class="btn btn-danger">Kembali</a>
                                             </form>
                                         </div>
                                     </div>

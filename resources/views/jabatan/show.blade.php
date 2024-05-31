@@ -69,7 +69,7 @@
                                                     <label class="form-label">Nama jabatan</label>
                                                     <input type="text" class="form-control" name="nama_jabatan" value="{{ $jabatan -> nama_jabatan }}" disabled>
                                                 </div><br>
-                                                <a href="{{ url('jabatan') }}" class="btn btn-danger">Kembali</a>
+                                                <a href="{{ url('admin/jabatan') }}" class="btn btn-danger">Kembali</a>
                                             </form>
                                         </div>
                                     </div>

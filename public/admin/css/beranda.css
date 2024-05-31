@@ -16,13 +16,17 @@ p {
     background-image: url(../img/literasi.png);
     background-repeat: no-repeat;
     background-size: cover;
+    
+}
+#artikel{
+    background-color: rgb(87, 146, 229);
 }
 #text1 {
     background-color: gray;
     margin-left: 60px;
     width: 45%;
     font-size: large;
-    height: 600px;
+    height: 650px;
 
 }
 #bg2 {

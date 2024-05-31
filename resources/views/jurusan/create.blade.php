@@ -63,19 +63,22 @@
                                 <div class="col-md-8">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="{{ route('jurusan.store') }}" method="POST">
+                                            <form action="{{ route('jurusan.store') }}" method="POST"
+                                                enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="mb-3">
                                                     <label class="form-label">Kaprog</label>
                                                     <input type="text" class="form-control" name="kaprog">
                                                     <label class="form-label">Nama Jurusan</label>
                                                     <input type="text" class="form-control" name="nama_jurusan">
+                                                    <label class="form-label">Sampul</label>
+                                                    <input type="file" class="form-control" name="sampul">
                                                 </div><br>
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                                                <a href="{{ url('jurusan') }}" class="btn btn-danger">Kembali</a>
+                                                <a href="{{ url('admin/jurusan') }}" class="btn btn-danger">Kembali</a>
                                             </form>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
                         </div>

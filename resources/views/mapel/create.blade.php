@@ -70,7 +70,7 @@
                                                     <input type="text" class="form-control" name="nama_mapel">
                                                 </div><br>
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                                                <a href="{{ url('mapel') }}" class="btn btn-danger">Kembali</a>
+                                                <a href="{{ url('admin/mapel') }}" class="btn btn-danger">Kembali</a>
                                             </form>
                                         </div>
                                     </div>

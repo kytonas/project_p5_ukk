@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Guru;
 use App\Models\Jabatan;
 use App\Models\Struktural;
-
 use Illuminate\Http\Request;
 
 class StrukturalController extends Controller
@@ -48,8 +47,17 @@ class StrukturalController extends Controller
     public function store(Request $request)
     {
         $struktural = new Struktural;
-        $struktural -> id_guru = $request -> id_guru;
-        $struktural -> id_jabatan = $request -> id_jabatan;
+        $struktural->id_guru = $request->id_guru;
+        $struktural->id_jabatan = $request->id_jabatan;
+        //upload image
+        if ($request->hasFile('sampul')) {
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/struktural', $name);
+            $struktural->sampul = $name;
+
+        }
+
         $struktural->save();
         return redirect()->route('struktural.index')->with('success', 'Data Berhasil Ditambah');
 
@@ -92,8 +100,17 @@ class StrukturalController extends Controller
     public function update(Request $request, $id)
     {
         $struktural = Struktural::findOrFail($id);
-        $struktural -> id_guru = $request -> id_guru;
-        $struktural -> id_jabatan = $request -> id_jabatan;
+        $struktural->id_guru = $request->id_guru;
+        $struktural->id_jabatan = $request->id_jabatan;
+        if ($request->hasFile('sampul')) {
+            $struktural->deleteImage();
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/struktural', $name);
+            $struktural->sampul = $name;
+
+        }
+
         $struktural->save();
         return redirect()->route('struktural.index')->with('success', 'Data Berhasil Ditambah');
     }

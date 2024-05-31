@@ -70,7 +70,7 @@
                                                     <input type="text" class="form-control" name="nama_jabatan">
                                                 </div><br>
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                                                <a href="{{ url('jabatan') }}" class="btn btn-danger">Kembali</a>
+                                                <a href="{{ url('admin/jabatan') }}" class="btn btn-danger">Kembali</a>
                                             </form>
                                         </div>
                                     </div>

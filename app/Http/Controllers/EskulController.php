@@ -42,14 +42,23 @@ class EskulController extends Controller
     {
         $eskul = new Eskul;
         $eskul->nama_eskul = $request->nama_eskul;
-        $eskul->isi = $request->isi;                                                       
+        $eskul->isi = $request->isi;
+        //upload image
+        if ($request->hasFile('sampul')) {
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/eskul', $name);
+            $eskul->sampul = $name;
+
+        }
+
         $eskul->save();
         return redirect()->route('eskul.index')->with('success', 'Data berhasil ditambah');
     }
 
     /**
      * Display the specified resource.
-     *
+     * 
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -83,7 +92,16 @@ class EskulController extends Controller
     {
         $eskul = Eskul::findOrFail($id);
         $eskul->nama_eskul = $request->nama_eskul;
-        $eskul->isi = $request->isi;                                                       
+        $eskul->isi = $request->isi;
+        if ($request->hasFile('sampul')) {
+            $eskul->deleteImage();
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/eskul', $name);
+            $eskul->sampul = $name;
+
+        }
+
         $eskul->save();
         return redirect()->route('eskul.index')->with('success', 'Data berhasil diubah');
     }
@@ -97,7 +115,7 @@ class EskulController extends Controller
     public function destroy($id)
     {
         $eskul = Eskul::findOrFail($id);
-        $eskul -> delete();
+        $eskul->delete();
         return redirect()->route('eskul.index');
     }
 }

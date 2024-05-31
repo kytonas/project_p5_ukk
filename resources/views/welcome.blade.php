@@ -45,10 +45,10 @@
   <!-- Akhir Jumbotron -->
     
    <!-- Awal Home -->
-   <div class="section">
+   <div class="section" id="artikel">
         <div class="container">
             {{-- ROW 1 --}}
-            <div class="row mt-5 justify-content-center">
+            <div class="row mt-5 justify-content-center text-light">
                 <h2>Artikel</h2>
             </div>
             {{-- /ROW 1 --}}
